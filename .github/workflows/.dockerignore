@@ -1,0 +1,6 @@
+# Ignore these files in Docker build
+.git
+.github
+.env
+*.pyc
+__pycache__
