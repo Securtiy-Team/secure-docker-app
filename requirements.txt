@@ -1,2 +1,2 @@
-# Python dependencies
-flask==2.0.1
+flask==2.3.2  # Updated from 2.0.1 to fix CVE-2023-30861
+setuptools==70.0.0  # Added to fix CVE-2024-6345
