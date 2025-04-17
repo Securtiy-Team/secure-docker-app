@@ -1,7 +1,7 @@
-# Use minimal Python image with explicit version pinning
-FROM python:3.11.9-slim-bookworm@sha256:2c500c29f9a25a9a8f6e3e3e0a7e0d9c7b1b1b1b1b1b1b1b1b1b1b1b1b1b1b
+# Use official Python image with SHA pinning
+FROM python:3.11.9-slim-bookworm@sha256:2c500c29f9a25a9a8f6e3e3e0a7e0d9c7b1b1b1b1b1b1b1b1b1b1b1b1b1b
 
-# Force upgrade all system packages
+# Force system upgrades
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get clean && \
@@ -14,12 +14,11 @@ RUN useradd -m appuser && \
 USER appuser
 WORKDIR /app
 
-# Install Python dependencies
+# Install dependencies
 COPY --chown=appuser:appuser requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy app
 COPY --chown=appuser:appuser . .
 
-# Runtime
 CMD ["python", "app.py"]
