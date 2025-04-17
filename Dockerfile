@@ -1,5 +1,5 @@
 # Use official Python image with valid SHA pinning
-FROM python:3.11.9-slim-bookworm@sha256:1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2
+FROM python:3.11.9-slim-bookworm@sha256:82c07f2f6e35255b92eb16f38dbd22679d5e8fb523064138d7c6468e7bf0c15b
 
 # Force system upgrades
 RUN apt-get update && \
